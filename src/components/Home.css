@@ -1,0 +1,148 @@
+.home {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.app-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.app-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.search-section {
+  margin-bottom: 2rem;
+}
+
+.filter-section {
+  margin-bottom: 3rem;
+}
+
+.results-section {
+  animation-delay: 0.3s;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.results-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.clear-all-btn {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.clear-all-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+}
+
+.no-results-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.no-results h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.no-results p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .home {
+    padding: 1rem 0;
+  }
+
+  .home-header {
+    margin-bottom: 2rem;
+  }
+
+  .app-title {
+    font-size: 2.5rem;
+  }
+
+  .app-subtitle {
+    font-size: 1rem;
+  }
+
+  .songs-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .results-header h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .no-results {
+    padding: 2rem 1rem;
+  }
+
+  .no-results-icon {
+    font-size: 3rem;
+  }
+}
