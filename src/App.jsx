@@ -31,7 +31,7 @@ function App() {
     return (
       <div className="app-loading">
         <div className="loading-spinner loading"></div>
-        <p>Loading songs...</p>
+        <p>Loading songs ...</p>
       </div>
     )
   }
