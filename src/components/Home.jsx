@@ -3,11 +3,14 @@ import SearchBox from './SearchBox'
 import FilterBar from './FilterBar'
 import SongCard from './SongCard'
 import './Home.css'
+import { useSongCompletion } from "../SongCompletionContext";
 
 const Home = ({ songs }) => {
   const [filteredSongs, setFilteredSongs] = useState(songs)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedTags, setSelectedTags] = useState([])
+  const { resetCompletedSongs } = useSongCompletion();
+
 
   // Get all unique tags from songs
   const allTags = [...new Set(songs.flatMap(song => song.customTags))]
@@ -61,15 +64,6 @@ const Home = ({ songs }) => {
           />
         </div>
 
-        <div className="filter-section fade-in">
-          <FilterBar
-            tags={allTags}
-            selectedTags={selectedTags}
-            onTagToggle={handleTagToggle}
-            onClearFilters={clearFilters}
-          />
-        </div>
-
         <div className="results-section">
           <div className="results-header">
             <h2>
@@ -80,25 +74,32 @@ const Home = ({ songs }) => {
                 Clear All Filters
               </button>
             )}
+            <button
+              className="reset-btn"
+              onClick={resetCompletedSongs}
+              style={{ marginBottom: "1rem" }}
+            >
+              Reset Completed Songs
+            </button>
           </div>
 
-          <div className="songs-grid fade-in">
-            {filteredSongs.length > 0 ? (
-              filteredSongs.map((song, index) => (
-                <SongCard
-                  key={song.id}
-                  song={song}
-                  index={index}
-                />
-              ))
-            ) : (
-              <div className="no-results">
-                <div className="no-results-icon">🎵</div>
-                <h3>No songs found</h3>
-                <p>Try adjusting your search or filter criteria</p>
-              </div>
-            )}
+      <div className="songs-list">
+        {filteredSongs.length > 0 ? (
+          <ul className="compact-song-list">
+            {filteredSongs.map((song, index) => (
+              <li key={song.id} className="compact-song-list-item">
+                <SongCard song={song} index={index} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="no-results">
+            <div className="no-results-icon">🎵</div>
+            <h3>No songs found</h3>
+            <p>Try adjusting your search or filter criteria</p>
           </div>
+        )}
+      </div>
         </div>
       </div>
     </div>

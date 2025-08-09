@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getSongById } from '../utils/songLoader'
 import './SongDetail.css'
+import { useSongCompletion } from "../SongCompletionContext";
 
 const SongDetail = ({ songs }) => {
+
   const { songId } = useParams()
   const navigate = useNavigate()
   const [currentLanguage, setCurrentLanguage] = useState('english')
   const [song, setSong] = useState(null)
+
+  const { completedSongs, toggleSong } = useSongCompletion();
 
   useEffect(() => {
     const foundSong = getSongById(songs, songId)
@@ -48,19 +52,6 @@ const SongDetail = ({ songs }) => {
           <button className="back-btn" onClick={() => navigate('/')}>
             ← Back to Songs
           </button>
-          <div className="header-actions">
-            <button className="share-btn" onClick={() => {
-              if (navigator.share) {
-                navigator.share({
-                  title: song.songName,
-                  text: `Check out "${song.songName}" by ${song.artist}`,
-                  url: window.location.href
-                })
-              }
-            }}>
-              📤 Share
-            </button>
-          </div>
         </header>
 
         <div className="song-detail-content">
@@ -86,9 +77,18 @@ const SongDetail = ({ songs }) => {
                   <span key={index} className="tag-item">{tag}</span>
                 ))}
               </div>
+
+          <label>
+            <input
+              type="checkbox"
+              className="completed-checkbox"
+              checked={!!completedSongs[song.id]}
+              onChange={() => toggleSong(song.id)}
+            />
+             &nbsp; Completed
+          </label>
             </div>
           </div>
-
           <div className="lyrics-section">
             <div className="lyrics-header">
               <h3>Lyrics</h3>

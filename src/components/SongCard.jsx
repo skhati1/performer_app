@@ -1,8 +1,13 @@
 import React from 'react'
+import { useSongCompletion } from "../SongCompletionContext";
 import { useNavigate } from 'react-router-dom'
 import './SongCard.css'
 
 const SongCard = ({ song, index }) => {
+
+  const { completedSongs, toggleSong } = useSongCompletion();
+  const completed = completedSongs[song.id];
+
   const navigate = useNavigate()
 
   const handleCardClick = () => {
@@ -13,7 +18,10 @@ const SongCard = ({ song, index }) => {
     <div 
       className="song-card fade-in" 
       onClick={handleCardClick}
-      style={{ animationDelay: `${index * 0.1}s` }}
+      style={{
+        animationDelay: `${index * 0.1}s`,
+        opacity: completed ? 0.5 : 1,
+      }}
     >
       <div className="song-card-header">
         <div className="song-info">

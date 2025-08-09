@@ -146,3 +146,124 @@
     font-size: 3rem;
   }
 }
+
+/* ...existing code... */
+
+.songs-list {
+  margin-top: 2rem;
+}
+
+.compact-song-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compact-song-list-item {
+  margin: 0;
+  padding: 0;
+}
+
+.song-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.song-card:last-child {
+  border-bottom: none;
+}
+
+.song-card .song-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.song-card .song-title {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.song-card .song-title {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.song-card .song-artist {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Hide extra info for compact view */
+.song-card .song-key,
+.song-card .song-tags,
+.song-card .card-footer {
+  display: none;
+}
+
+/* --- Reset Button Styles --- */
+.reset-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 1rem;
+  box-shadow: 0 1px 4px rgba(37,99,235,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.reset-btn:hover,
+.reset-btn:focus {
+  background: #1742a0;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.15);
+}
+
+/* --- Results Header --- */
+.results-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Clear All Filters Button --- */
+.clear-all-btn {
+  background: #e5e7eb;
+  color: #2563eb;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.clear-all-btn:hover,
+.clear-all-btn:focus {
+  background: #dbeafe;
+}
+
+/* --- No Results --- */
+.no-results {
+  text-align: center;
+  color: #6b7280;
+  padding: 2rem 0;
+}
+
+.no-results-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
