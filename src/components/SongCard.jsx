@@ -42,8 +42,8 @@ const SongCard = ({ song, index }) => {
             {song.chords?.slice(0, 4).map((chord, idx) => (
               <span key={idx} className="chord">{chord}</span>
             ))}
-            {song.chords.length > 4 && (
-              <span className="chord-more">+{song.chords.length - 4}</span>
+            {song.chords?.length > 4 && (
+              <span className="chord-more">+{song.chords?.length - 4}</span>
             )}
           </div>
         </div>
