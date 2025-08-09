@@ -39,7 +39,7 @@ const SongCard = ({ song, index }) => {
         <div className="song-chords">
           <span className="chords-label">Chords:</span>
           <div className="chords-list">
-            {song.chords.slice(0, 4).map((chord, idx) => (
+            {song.chords?.slice(0, 4).map((chord, idx) => (
               <span key={idx} className="chord">{chord}</span>
             ))}
             {song.chords.length > 4 && (
@@ -50,7 +50,7 @@ const SongCard = ({ song, index }) => {
       </div>
 
       <div className="song-tags">
-        {song.customTags.slice(0, 3).map((tag, idx) => (
+        {song.customTags?.slice(0, 3).map((tag, idx) => (
           <span key={idx} className="song-tag">{tag}</span>
         ))}
         {song.customTags.length > 3 && (

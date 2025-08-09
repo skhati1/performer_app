@@ -1,11 +1,12 @@
 {
   "id": "Aaoge Jab Tum",
   "songName": "Aaoge Jab Tum",
-  "artist": "",
-  "key": "",
-  "chords": [],
-  "customTags": [],
+  "artist": "Rashid Khan",
+  "key": "D#",
+  "chords": ["D#", "G#", "A#", "B#m"],
+  "customTags": ["slow"],
   "lyrics": {
-    "hindi": ""
+    "hindi": "आओगे जब तुम साजना\nआओगे जब तुम साजना\nअंगना फूल खिलेंगे\nबरसेगा सावन, बरसेगा सावन\nझूम झूम के\nदो दिल ऐसे मिलेंगे\nआओगे जब तुम साजना\nअंगना फूल खिलेंगे\nनैनो तेरे कजरारे\nनैनो पे हम दिल हारे है\nअनजाने ही तेरे नैनो ने\nवादे किये कई सारे है\nसाँसों की लहर मादम् चले\nतो तू कहे बरसेगा सावन\nबरसेगा सावन झूम झूम के\nदो दिल ऐसे मिलेंगे\nआओगे जब तुम साजना\nअंगना फूल खिलेंगे\nका बा बा सा सा रे गा गा\nचंदा को ताको रातो में\nहै ज़िन्दगी तेरे हातो में\nपलकों पे झिल मिल तारे है\nआना बहरी बरसातो में\nसपनो का जहाँ\nहोगा खिला खिला\nबरसेगा सावन, बरसेगा सावन\nझूम झूम के\nदो दिल ऐसे मिलेंगे\nपा नि सा रे मा मा गा गा गा\nगा रे रे रे गा रे दा नि रे रे मा दा नि दा दा\nदा नि दा पा मा मा मा दा दा मा रे पा गा\nगा मा दा नि सा सा रे पा मा मा गा गा गा रे गा सा\nअंगना फूल खिले\nपा नि दा नि दा सा रे मा मा मा मा गा\nअंगना फूल खिले\nमा मा पा नि दा रे मा पा रे रे सा दा\nरे पा पा मा मा गा गा",
+    "english": "Aaoge Jab Tum Saajna\nAaoge Jab Tum Saajna\nAngana Phool Khilege\nBarsega Saawan, Barsega Saawan\nJhoom Jhoom Ke\nDo Dil Aise Milenge\nAaoge Jab Tum Saajna\nAngana Phool Khilege\n\nNaina Tere Kajrare\nNaino Pe Hum Dil Hare Hai\nAnjane Hi Tere Naino Ne\nWade Kiye Kaie Saare Hai\nSanso He Leher Madam Chale\nTo Tu Kahe Barsega Saawan\nBarsega Saawan Jhoom Jhoom Ke\nDo Dil Aise Milenge\nAaoge Jab Tum Saajna\nAngana Phool Khilege\nKa Ba Ba Sa Sa Re Ga Ga\n\nChanda Ko Tako Raato Mein\nHai Zindagi Tere Haton Mein\nPalko Pe Jil Mil Tare Hai\nAana Bahri Barsato Mein\nSapno Ka Jahan\nHoga Khila Khila\nBarsega Saawan, Barsega Saawan\nJhoom Jhoom Ke\nDo Dil Aise Milenge\n\nPa Ni Sa Re Ma Ma Ga Ga Ga\nGa Re Re Re Ga Re Da Ni Re Re Ma Da Ni Da Da\nDa Ni Da Pa Ma Ma Ma Da Da Ma Re Pa Ga\nGa Ma Da Ni Sa Sa Re Pa Ma Ma Ga Ga Ga Re Ga Sa\nAngana Phool Khile\nPa Ni Da Ni Da Sa Re Ma Ma Ma Ma Ga\nAngana Phool Khile\nMa Ma Pa Ni Da Re Ma Pa Re Re Sa Da\nRe Pa Pa Ma Ma Ga Ga"
   }
 }
