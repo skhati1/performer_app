@@ -3,7 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://skhati1.github.io/performer_app",
   "scripts": {
     "dev": "sh ./generateIndexJs.sh && vite",
     "build": "sh ./generateIndexJs.sh && vite build",
