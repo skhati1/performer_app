@@ -27,7 +27,7 @@ const Home = ({ songs }) => {
     }
 
     // Filter by selected tags
-    if (selectedTags.length > 0) {
+    if (selectedTags?.length > 0) {
       filtered = filtered.filter(song =>
         selectedTags.every(tag => song.customTags.includes(tag))
       )
@@ -67,9 +67,9 @@ const Home = ({ songs }) => {
         <div className="results-section">
           <div className="results-header">
             <h2>
-              {filteredSongs.length} song{filteredSongs.length !== 1 ? 's' : ''} found
+              {filteredSongs?.length} song{filteredSongs?.length !== 1 ? 's' : ''} found
             </h2>
-            {(searchTerm || selectedTags.length > 0) && (
+            {(searchTerm || selectedTags?.length > 0) && (
               <button className="clear-all-btn" onClick={clearFilters}>
                 Clear All Filters
               </button>
@@ -84,7 +84,7 @@ const Home = ({ songs }) => {
           </div>
 
       <div className="songs-list">
-        {filteredSongs.length > 0 ? (
+        {filteredSongs?.length > 0 ? (
           <ul className="compact-song-list">
             {filteredSongs.map((song, index) => (
               <li key={song.id} className="compact-song-list-item">

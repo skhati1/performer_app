@@ -53,8 +53,8 @@ const SongCard = ({ song, index }) => {
         {song.customTags?.slice(0, 3).map((tag, idx) => (
           <span key={idx} className="song-tag">{tag}</span>
         ))}
-        {song.customTags.length > 3 && (
-          <span className="tag-more">+{song.customTags.length - 3}</span>
+        {song.customTags?.length > 3 && (
+          <span className="tag-more">+{song.customTags?.length - 3}</span>
         )}
       </div>
 

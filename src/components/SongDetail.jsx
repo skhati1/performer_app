@@ -40,7 +40,7 @@ const SongDetail = ({ songs }) => {
     return lyrics.split('\n').map((line, index) => (
       <React.Fragment key={index}>
         {line}
-        {index < lyrics.split('\n').length - 1 && <br />}
+        {index < lyrics.split('\n')?.length - 1 && <br />}
       </React.Fragment>
     ))
   }
