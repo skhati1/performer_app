@@ -3,6 +3,10 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  build: {
+        minify: false, // Disables minification for JS and CSS
+        cssMinify: false, // Disable CSS minification only
+      },
   plugins: [
     react(),
     VitePWA({
