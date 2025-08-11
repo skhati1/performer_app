@@ -32,10 +32,6 @@
   margin-bottom: 3rem;
 }
 
-.results-section {
-  animation-delay: 0.3s;
-}
-
 .results-header {
   display: flex;
   justify-content: space-between;
@@ -72,7 +68,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
-  animation: fadeIn 0.6s ease-out;
 }
 
 .no-results {
