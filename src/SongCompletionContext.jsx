@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const SongCompletionContext = createContext();
 
@@ -9,15 +9,15 @@ export function useSongCompletion() {
 export function SongCompletionProvider({ children }) {
   const [completedSongs, setCompletedSongs] = useState({});
 
-  // Load from sessionStorage on mount
+  // Load from localStorage on startup
   useEffect(() => {
-    const stored = sessionStorage.getItem("completedSongs");
+    const stored = localStorage.getItem("completedSongs");
     if (stored) setCompletedSongs(JSON.parse(stored));
   }, []);
 
-  // Save to sessionStorage on change
+  // Save to localStorage whenever completedSongs changes
   useEffect(() => {
-    sessionStorage.setItem("completedSongs", JSON.stringify(completedSongs));
+    localStorage.setItem("completedSongs", JSON.stringify(completedSongs));
   }, [completedSongs]);
 
   const toggleSong = (songId) => {
@@ -28,7 +28,7 @@ export function SongCompletionProvider({ children }) {
   };
 
   const resetCompletedSongs = () => {
-    sessionStorage.removeItem("completedSongs");
+    localStorage.removeItem("completedSongs");
     setCompletedSongs({});
   };
 
