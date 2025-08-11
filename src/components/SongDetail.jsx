@@ -54,70 +54,57 @@ const SongDetail = ({ songs }) => {
           </button>
         </header>
 
-        <div className="song-detail-content">
-          <div className="song-info-section">
-            <div className="song-main-info">
-              <h1 className="song-title">{song.songName}</h1>
-              <p className="song-artist">by {song.artist}</p>
+        {/* Compact top bar */}
+        <div className="song-top-bar">
+          <span className="song-title">{song.songName}</span>
+          <span className="song-artist">by {song.artist}</span>
+          <span className="song-key">Key: {song.key}</span>
+          {song.chords && song.chords.length > 0 && (
+            <div className="chords-bar">
+              {song.chords.map((chord, idx) => (
+                <span key={idx} className="chord-tag">{chord} &nbsp;</span>
+              ))}
             </div>
-
-            <div className="song-chords-section">
-              <h3>Chords</h3>
-              <div className="chords-display">
-                {song.chords.map((chord, index) => (
-                  <span key={index} className="chord-item">{chord}</span>
-                ))}
-              </div>
-            </div>
-
-            <div className="song-tags-section">
-              <h3>Tags</h3>
-              <div className="tags-display">
-                {song.customTags.map((tag, index) => (
-                  <span key={index} className="tag-item">{tag}</span>
-                ))}
-              </div>
-
-          <label>
+          )}
+          <label className="completed-checkbox-label">
             <input
               type="checkbox"
               className="completed-checkbox"
               checked={!!completedSongs[song.id]}
               onChange={() => toggleSong(song.id)}
             />
-             &nbsp; Completed
+            {completedSongs[song.id] && <span className="completed-text">Completed</span>}
           </label>
+        </div>
+
+        {/* Main content full width */}
+        <div className="lyrics-section">
+          <div className="lyrics-header">
+            <h3>Lyrics</h3>
+            <div className="language-toggle">
+              <button
+                className={`toggle-btn ${currentLanguage === 'english' ? 'active' : ''}`}
+                onClick={() => setCurrentLanguage('english')}
+              >
+                English
+              </button>
+              <button
+                className={`toggle-btn ${currentLanguage === 'hindi' ? 'active' : ''}`}
+                onClick={() => setCurrentLanguage('hindi')}
+              >
+                हिंदी
+              </button>
             </div>
           </div>
-          <div className="lyrics-section">
-            <div className="lyrics-header">
-              <h3>Lyrics</h3>
-              <div className="language-toggle">
-                <button
-                  className={`toggle-btn ${currentLanguage === 'english' ? 'active' : ''}`}
-                  onClick={() => setCurrentLanguage('english')}
-                >
-                  English
-                </button>
-                <button
-                  className={`toggle-btn ${currentLanguage === 'hindi' ? 'active' : ''}`}
-                  onClick={() => setCurrentLanguage('hindi')}
-                >
-                  हिंदी
-                </button>
-              </div>
-            </div>
-
-            <div className="lyrics-content">
-              <div className={`lyrics-text ${currentLanguage}`}>
-                {formatLyrics(song.lyrics[currentLanguage])}
-              </div>
+          <div className="lyrics-content">
+            <div className={`lyrics-text ${currentLanguage}`}>
+              {formatLyrics(song.lyrics[currentLanguage])}
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default SongDetail

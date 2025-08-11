@@ -349,25 +349,61 @@
   }
 }
 
+.song-top-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: #23272f;           /* dark background */
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.song-title {
+  font-weight: 600;
+  color: #60a5fa;                /* lighter blue for contrast */
+}
+
+.song-artist,
+.song-key,
+.song-tag {
+  color: #d1d5db;                /* light gray text */
+  font-size: 0.97rem;
+  margin-right: 0.5rem;
+}
+
+.song-tag {
+  background: #374151;           /* dark gray tag background */
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.9rem;
+  color: #a5b4fc;                /* soft blue for tag text */
+}
 
 .completed-checkbox-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin: 1rem 0;
+  gap: 0.4rem;
+  margin-left: auto;
 }
 
 .completed-checkbox {
-  accent-color: #2563eb; /* matches theme color */
-  width: 1.2rem;
-  height: 1.2rem;
-  cursor: pointer;
+  accent-color: #60a5fa;         /* match title color */
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 .completed-text {
-  color: #2563eb;
+  color: #60a5fa;
   font-weight: 600;
   font-size: 1rem;
-  letter-spacing: 0.5px;
-  transition: color 0.2s;
+}
+
+/* Lyrics section full width */
+.lyrics-section {
+  width: 100%;
+  margin-top: 1.5rem;
 }
