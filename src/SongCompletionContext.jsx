@@ -7,16 +7,13 @@ export function useSongCompletion() {
 }
 
 export function SongCompletionProvider({ children }) {
-  const [completedSongs, setCompletedSongs] = useState({});
-
-  // Load from localStorage on startup
-  useEffect(() => {
+  const [completedSongs, setCompletedSongs] = useState(() => {
     const stored = localStorage.getItem("completedSongs");
-    if (stored) setCompletedSongs(JSON.parse(stored));
-  }, []);
+    return stored ? JSON.parse(stored) : {};
+  });
 
   // Save to localStorage whenever completedSongs changes
-  useEffect(() => {
+   useEffect(() => {
     localStorage.setItem("completedSongs", JSON.stringify(completedSongs));
   }, [completedSongs]);
 
